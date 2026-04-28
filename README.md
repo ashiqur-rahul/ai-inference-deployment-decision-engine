@@ -2,123 +2,282 @@
 
 An end-to-end **AI deployment decision system** that recommends optimal inference configurations by balancing:
 
-- ⚡ Latency  
-- 🎯 Accuracy  
-- 💰 Cost  
-- 🔋 Energy consumption  
-- 🌍 Carbon impact  
+- ⚡ Latency
+- 🎯 Accuracy
+- 💰 Cost
+- 🔋 Energy consumption
+- 🌍 Carbon impact
 
-This project goes beyond model performance and demonstrates **real-world AI system design and deployment thinking**.
+This project goes beyond model accuracy and demonstrates **real-world AI system design, deployment decision-making, and infrastructure-aware optimization**.
 
 ---
 
 ## 🚀 Why This Project Stands Out
 
-Most AI projects stop at training models.
+Most AI projects stop at training a model.
 
-👉 This project answers a much harder question:
+This project answers a harder and more practical question:
 
-> “How should we deploy AI systems efficiently in the real world?”
+> **How should we deploy AI systems efficiently in the real world?**
 
 It combines:
-- ✅ Real ML benchmarking  
-- ✅ System-level optimization  
-- ✅ Infrastructure-aware trade-offs  
-- ✅ Deployment-ready architecture  
+
+- ✅ Real ML benchmarking
+- ✅ System-level optimization
+- ✅ Infrastructure-aware trade-off analysis
+- ✅ Deployment-ready architecture
+- ✅ Interactive dashboard
+- ✅ API-ready backend
 
 ---
 
 ## 🧩 Key Capabilities
 
 ### 🔬 Real Benchmarking Layer
-- sklearn digits dataset (real data)
-- Measured accuracy (~97%+)
-- Measured inference latency
-- Confusion matrix visualization
 
-### ⚙️ Decision Engine
-- Multi-objective optimization
+- Uses the real `sklearn` digits dataset
+- Measures model accuracy
+- Measures local inference latency
+- Generates a confusion matrix
+
+### ⚙️ Deployment Decision Engine
+
+- Multi-objective scoring system
 - Constraint-based filtering:
   - latency limits
   - accuracy thresholds
   - cost ceilings
-- Ranking system for deployment configurations
+- Recommends the best deployment configuration
 
 ### 📊 Interactive Dashboard
+
 - Built with Streamlit
-- Trade-off exploration
+- Shows latency, energy, cost, carbon, and accuracy trade-offs
+- Allows interactive scenario exploration
 
 ### 🔌 API-Ready System
+
 - FastAPI backend
-- Endpoint: /recommend
+- Recommendation endpoint: `/recommend`
+- Local Swagger UI available at `/docs`
 
 ### ⚡ Optimization Strategies
+
 - Quantization
 - Pruning
 - Batching
 - Caching
+- ONNX Runtime scenario
+- Combined optimization strategies
 
 ---
 
 ## ⚙️ How It Works
 
-Real Benchmark → Scenario Modeling → Optimization → Constraint Filtering → Ranking → Recommendation
+```text
+Real Benchmark
+      ↓
+Scenario Modeling
+      ↓
+Optimization Strategies
+      ↓
+Constraint Filtering
+      ↓
+Multi-objective Ranking
+      ↓
+Deployment Recommendation
+```
 
 ---
 
-## 📊 Dashboard Preview
+## 📊 Results Preview
 
-(Add screenshots inside /assets folder)
+### Latency vs Energy
 
-![Latency vs Energy](assets/latency_energy_tradeoff.png)
-![Accuracy vs Energy](assets/accuracy_energy_tradeoff.png)
-![Energy Comparison](assets/energy_comparison.png)
-![Confusion Matrix](assets/digits_confusion_matrix.png)
+![Latency vs Energy](outputs/figures/latency_energy_tradeoff.png)
+
+### Accuracy vs Energy
+
+![Accuracy vs Energy](outputs/figures/accuracy_energy_tradeoff.png)
+
+### Energy Comparison
+
+![Energy Comparison](outputs/figures/energy_comparison.png)
+
+### Cost Comparison
+
+![Cost Comparison](outputs/figures/cost_comparison.png)
+
+### Confusion Matrix
+
+![Confusion Matrix](outputs/figures/digits_confusion_matrix.png)
 
 ---
 
 ## 🚀 Quick Start
 
+### 1. Create and activate virtual environment
+
+```bash
 python -m venv .venv
 .venv\Scripts\activate
+```
+
+### 2. Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
+### 3. Run the real benchmark
+
+```bash
 python src/accuracy_benchmark.py
-python src/run_pipeline.py
+```
 
+### 4. Run the pipeline
+
+```bash
+python src/run_pipeline.py
+```
+
+### 5. Launch the Streamlit dashboard
+
+```bash
 streamlit run app/app.py
+```
 
 ---
 
 ## 🔌 API Usage
 
-uvicorn api.main:app --reload
+Run the FastAPI backend locally:
 
-Open:
+```bash
+uvicorn api.main:app --reload
+```
+
+Then open Swagger UI in your browser:
+
+```text
 http://127.0.0.1:8000/docs
+```
+
+> Note: `127.0.0.1` is a local address. It only works while the API is running on your own computer. For a public link, the API must be deployed, for example on Render.
+
+### Endpoint
+
+```text
+POST /recommend
+```
+
+Returns:
+
+- recommended hardware
+- optimization strategy
+- reasoning
+- latency estimate
+- accuracy estimate
+- cost estimate
+- energy and carbon estimates
+
+---
+
+## ⚡ Optional Advanced Benchmarks
+
+### PyTorch benchmark
+
+```bash
+pip install torch torchvision
+python src/real_benchmark.py
+```
+
+### ONNX export and benchmark
+
+```bash
+pip install torch torchvision onnx onnxruntime
+python src/onnx_export.py
+python src/onnx_benchmark.py
+```
 
 ---
 
 ## 📁 Project Structure
 
-app/ - dashboard  
-api/ - API  
-src/ - core logic  
-data/ - datasets  
-outputs/ - results  
-docs/ - documentation  
+```text
+.
+├── app/                 # Streamlit dashboard
+├── api/                 # FastAPI service
+├── src/                 # Core decision engine and benchmark scripts
+├── data/                # Model, hardware, optimization, and region profiles
+├── outputs/             # Generated reports and figures
+├── docs/                # Methodology, assumptions, references
+├── models/              # Saved models
+├── tests/               # Unit tests
+├── requirements.txt
+└── README.md
+```
 
 ---
 
-## 🌍 Note
+## 📊 Key Outputs
 
-Hybrid system:
-- Real ML benchmarking
-- Scenario-based modeling (energy, cost, carbon)
+- Deployment recommendation JSON
+- Latency vs energy trade-off plot
+- Accuracy vs energy analysis
+- Cost comparison plot
+- Real dataset confusion matrix
+- Energy and carbon estimates
+- API-based recommendation response
+
+---
+
+## 🌍 Methodology Note
+
+This project uses a **hybrid methodology**:
+
+1. **Real ML benchmarking**
+   - real dataset
+   - measured accuracy
+   - measured local latency
+
+2. **Scenario-based infrastructure modeling**
+   - energy consumption
+   - carbon impact
+   - cost estimates
+   - hardware and optimization profiles
+
+It is designed to demonstrate an **AI deployment decision framework**, not exact production telemetry.
+
+---
+
+## 🔬 References
+
+- NVIDIA GPU specifications
+- Uptime Institute data center PUE references
+- Ember electricity carbon intensity references
+- US EPA eGRID
+- Scikit-learn digits dataset
+
+See: [`docs/references.md`](docs/references.md)
+
+---
+
+## 🎥 Demo Video
+
+Coming soon.
 
 ---
 
 ## 👨‍💻 Author
 
-Ashiqur Rahman Rahul  
+**Ashiqur Rahman Rahul**  
+AI Research Analyst  
+AI Systems | Energy Efficiency | Infrastructure Optimization  
 Berlin, Germany
+
+---
+
+## 📜 License
+
+MIT License
