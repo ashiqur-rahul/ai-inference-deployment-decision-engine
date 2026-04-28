@@ -1,67 +1,124 @@
-# AI Inference Optimization and Deployment Decision Engine
+# 🧠 AI Inference Optimization & Deployment Decision Engine
 
-A production-style AI deployment decision platform that evaluates inference configurations and recommends the best option based on latency, accuracy, energy, carbon, and cost constraints.
+An end-to-end **AI deployment decision system** that recommends optimal inference configurations by balancing:
 
-This project goes beyond a simple optimization demo. It behaves like a mini AI infrastructure decision platform and includes a real dataset benchmark, optional PyTorch inference timing, optional ONNX export, ONNX Runtime timing, a Streamlit dashboard, static reports, a FastAPI endpoint, and deployment-ready configuration.
+- ⚡ Latency  
+- 🎯 Accuracy  
+- 💰 Cost  
+- 🔋 Energy consumption  
+- 🌍 Carbon impact  
 
-## Results Preview
+This project goes beyond model performance and demonstrates **real-world AI system design and deployment thinking**.
 
-![Latency Energy Tradeoff](outputs/figures/latency_energy_tradeoff.png)
+---
 
-![Accuracy Energy Tradeoff](outputs/figures/accuracy_energy_tradeoff.png)
+## 🚀 Why This Project Stands Out
 
-![Energy Comparison](outputs/figures/energy_comparison.png)
+Most AI projects stop at training models.
 
-![Cost Comparison](outputs/figures/cost_comparison.png)
+👉 This project answers a much harder question:
 
-![Digits Confusion Matrix](outputs/figures/digits_confusion_matrix.png)
+> “How should we deploy AI systems efficiently in the real world?”
 
-## Quick Start
+It combines:
+- ✅ Real ML benchmarking  
+- ✅ System-level optimization  
+- ✅ Infrastructure-aware trade-offs  
+- ✅ Deployment-ready architecture  
 
-```bash
+---
+
+## 🧩 Key Capabilities
+
+### 🔬 Real Benchmarking Layer
+- sklearn digits dataset (real data)
+- Measured accuracy (~97%+)
+- Measured inference latency
+- Confusion matrix visualization
+
+### ⚙️ Decision Engine
+- Multi-objective optimization
+- Constraint-based filtering:
+  - latency limits
+  - accuracy thresholds
+  - cost ceilings
+- Ranking system for deployment configurations
+
+### 📊 Interactive Dashboard
+- Built with Streamlit
+- Trade-off exploration
+
+### 🔌 API-Ready System
+- FastAPI backend
+- Endpoint: /recommend
+
+### ⚡ Optimization Strategies
+- Quantization
+- Pruning
+- Batching
+- Caching
+
+---
+
+## ⚙️ How It Works
+
+Real Benchmark → Scenario Modeling → Optimization → Constraint Filtering → Ranking → Recommendation
+
+---
+
+## 📊 Dashboard Preview
+
+(Add screenshots inside /assets folder)
+
+![Latency vs Energy](assets/latency_energy_tradeoff.png)
+![Accuracy vs Energy](assets/accuracy_energy_tradeoff.png)
+![Energy Comparison](assets/energy_comparison.png)
+![Confusion Matrix](assets/digits_confusion_matrix.png)
+
+---
+
+## 🚀 Quick Start
+
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
+
 python src/accuracy_benchmark.py
 python src/run_pipeline.py
+
 streamlit run app/app.py
-```
 
-## Optional Benchmarks
+---
 
-```bash
-pip install torch torchvision
-python src/real_benchmark.py
-```
+## 🔌 API Usage
 
-```bash
-pip install torch torchvision onnx onnxruntime
-python src/onnx_export.py
-python src/onnx_benchmark.py
-```
-
-## API
-
-```bash
 uvicorn api.main:app --reload
-```
 
 Open:
-
-```text
 http://127.0.0.1:8000/docs
-```
 
-## Run Tests
+---
 
-```bash
-pytest
-```
+## 📁 Project Structure
 
-## Important Note
+app/ - dashboard  
+api/ - API  
+src/ - core logic  
+data/ - datasets  
+outputs/ - results  
+docs/ - documentation  
 
-This project uses a hybrid approach: real sklearn digits benchmark + optional local model timing + scenario-based energy, carbon, and cost modelling.
+---
 
-## Author
+## 🌍 Note
 
-Ashiqur Rahman Rahul
+Hybrid system:
+- Real ML benchmarking
+- Scenario-based modeling (energy, cost, carbon)
+
+---
+
+## 👨‍💻 Author
+
+Ashiqur Rahman Rahul  
+Berlin, Germany
