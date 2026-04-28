@@ -1,0 +1,69 @@
+{
+  "status": "Feasible recommendation found",
+  "hardware": "Jetson AGX Xavier",
+  "strategy": "Caching + Quantization",
+  "reason": "Caching + Quantization on Jetson AGX Xavier selected: 0.1 ms latency, 0.966 estimated accuracy, 9.11 kWh/month, 3.38 kgCO2/month, $2.92/month.",
+  "best_result": {
+    "model": "MobileNetV2",
+    "hardware": "Jetson AGX Xavier",
+    "strategy": "Caching + Quantization",
+    "latency_ms": 0.0604984255915042,
+    "latency_source": "measured_adjusted",
+    "throughput_rps": 43498.30465237716,
+    "estimated_accuracy": 0.9657777777777777,
+    "accuracy_source": "measured_dataset",
+    "model_size_mb": 5.88,
+    "facility_energy_kwh": 9.110297390636969,
+    "it_energy_kwh": 5.839934224767288,
+    "energy_per_1000_inferences_wh": 1.822059478127394,
+    "carbon_kgco2": 3.3799203319263156,
+    "monthly_cost_usd": 2.915422883902301,
+    "active_hours_month": 0.03192972461773833,
+    "meets_latency": true,
+    "meets_accuracy": true,
+    "meets_cost": true,
+    "score": 0.05785953321381781
+  },
+  "rejected_examples": [
+    {
+      "hardware": "NVIDIA A10",
+      "strategy": "Caching + Quantization",
+      "failed_constraints": [
+        "cost"
+      ],
+      "score": 3.513168298265265
+    },
+    {
+      "hardware": "NVIDIA A10",
+      "strategy": "INT8 Quantization",
+      "failed_constraints": [
+        "cost"
+      ],
+      "score": 3.5132099818984406
+    },
+    {
+      "hardware": "NVIDIA A10",
+      "strategy": "ONNX Runtime",
+      "failed_constraints": [
+        "cost"
+      ],
+      "score": 3.5132116170328613
+    },
+    {
+      "hardware": "NVIDIA A10",
+      "strategy": "Structured Pruning",
+      "failed_constraints": [
+        "cost"
+      ],
+      "score": 3.513262974542868
+    },
+    {
+      "hardware": "NVIDIA A10",
+      "strategy": "Quantization + Batching",
+      "failed_constraints": [
+        "cost"
+      ],
+      "score": 3.5132863802879077
+    }
+  ]
+}

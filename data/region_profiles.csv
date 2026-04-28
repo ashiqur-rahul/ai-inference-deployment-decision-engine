@@ -1,0 +1,5 @@
+region,carbon_intensity_gco2_kwh,electricity_price_usd_kwh,source_note
+Germany,371,0.32,Ember European electricity review style reference plus scenario price
+EU Average,213,0.27,Public EU carbon intensity reference plus scenario price
+United States,373,0.14,EPA/eGRID style US factor plus scenario price
+Global Average,480,0.18,Ember global electricity review style reference plus scenario price

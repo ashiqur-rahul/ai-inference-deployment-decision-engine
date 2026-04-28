@@ -1,0 +1,10 @@
+strategy,energy_multiplier,latency_multiplier,compute_multiplier,accuracy_drop,model_size_multiplier,description
+FP32 Baseline,1.00,1.00,1.00,0.000,1.00,Reference deployment without optimization
+Batch Size 8,0.78,1.20,0.94,0.000,1.00,Moderate batching improves throughput but can increase latency
+Batch Size 32,0.58,1.75,0.78,0.000,1.00,Large batching improves energy per request but can violate latency constraints
+INT8 Quantization,0.63,0.72,0.68,0.012,0.42,Lower precision inference reduces model size and energy
+Structured Pruning,0.74,0.82,0.76,0.020,0.65,Reduced parameters and compute with moderate accuracy impact
+Quantization + Batching,0.42,0.92,0.45,0.018,0.42,Combined efficiency profile
+Caching + Quantization,0.36,0.65,0.38,0.012,0.42,Assumes repeated requests can be served from cache
+ONNX Runtime,0.82,0.70,0.72,0.000,1.00,Optional measured ONNX Runtime acceleration path
+Measured Sklearn Pipeline,0.88,1.00,1.00,0.000,1.00,Measured accuracy and latency from sklearn digits benchmark

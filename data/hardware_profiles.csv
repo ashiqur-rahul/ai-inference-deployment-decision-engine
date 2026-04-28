@@ -1,0 +1,7 @@
+hardware,type,tdp_watts,idle_watts,speed_factor,hourly_infra_cost_usd,request_platform_fee_usd,source_note
+CPU Server,cpu,250,70,1.0,0.020,0.000020,Scenario baseline server
+NVIDIA T4,gpu,70,18,2.5,0.012,0.000030,NVIDIA public T4 max power reference
+NVIDIA A10,gpu,150,40,4.0,0.018,0.000045,Public/spec-style A10 TDP reference
+NVIDIA A100 PCIe,gpu,300,60,8.0,0.032,0.000080,NVIDIA public A100 PCIe TDP reference
+NVIDIA H100 PCIe,gpu,350,75,14.0,0.045,0.000120,NVIDIA public H100 PCIe TDP reference
+Jetson AGX Xavier,edge,30,8,0.75,0.004,0.000000,NVIDIA Jetson power mode reference family

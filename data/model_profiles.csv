@@ -1,0 +1,6 @@
+model_name,task,model_size_mb,baseline_latency_ms_cpu,baseline_accuracy,source_type
+MobileNetV2,vision,14,25,0.720,scenario_profile
+ResNet18,vision,44,65,0.760,scenario_profile
+Mini-BERT,nlp,42,90,0.820,scenario_profile
+TinyML CNN,edge-vision,2.5,8,0.680,scenario_profile
+Digits Classifier,vision,0.4,4,0.950,measured_dataset_profile

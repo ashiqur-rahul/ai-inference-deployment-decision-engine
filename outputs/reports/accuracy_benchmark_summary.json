@@ -1,0 +1,8 @@
+{
+  "status": "completed",
+  "dataset": "sklearn_digits",
+  "best_model": "LogisticRegression",
+  "best_accuracy": 0.9777777777777777,
+  "best_mean_latency_ms": 0.09307450091000646,
+  "note": "Real local dataset benchmark using sklearn digits."
+}
