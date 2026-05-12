@@ -235,8 +235,8 @@ ai-deployment-decision-engine-top1/
 ### Clone Repository
 
 ```bash
-git clone https://github.com/your-username/ai-deployment-decision-engine.git
-cd ai-deployment-decision-engine
+git clone https://github.com/ashiqur-rahul/ai-inference-deployment-decision-engine.git
+cd ai-inference-deployment-decision-engine
 ```
 
 ### Create Virtual Environment
