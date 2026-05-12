@@ -1,283 +1,457 @@
-# 🧠 AI Inference Optimization & Deployment Decision Engine
+# AI Inference Optimization & Deployment Decision Engine
 
-An end-to-end **AI deployment decision system** that recommends optimal inference configurations by balancing:
+Production-style AI deployment optimization engine for selecting optimal inference deployments across **latency, accuracy, cost, energy, carbon emissions, queue delay, autoscaling, and infrastructure constraints**.
 
-- ⚡ Latency
-- 🎯 Accuracy
-- 💰 Cost
-- 🔋 Energy consumption
-- 🌍 Carbon impact
-
-This project goes beyond model accuracy and demonstrates **real-world AI system design, deployment decision-making, and infrastructure-aware optimization**.
+This project simulates and evaluates real-world AI deployment decisions using **multi-objective Pareto optimization**, **systems-aware modeling**, **carbon-aware infrastructure analysis**, and **deployment explainability**.
 
 ---
 
-## 🚀 Why This Project Stands Out
+## Dashboard Preview
 
-Most AI projects stop at training a model.
-
-This project answers a harder and more practical question:
-
-> **How should we deploy AI systems efficiently in the real world?**
-
-It combines:
-
-- ✅ Real ML benchmarking
-- ✅ System-level optimization
-- ✅ Infrastructure-aware trade-off analysis
-- ✅ Deployment-ready architecture
-- ✅ Interactive dashboard
-- ✅ API-ready backend
+![Dashboard](assets/dashboard_main.png)
 
 ---
 
-## 🧩 Key Capabilities
+## Why This Project Matters
 
-### 🔬 Real Benchmarking Layer
+Modern AI systems are no longer evaluated only on model accuracy. Real-world deployment decisions must balance inference latency, infrastructure cost, carbon emissions, energy efficiency, queueing behavior, autoscaling requirements, hardware compatibility, deployment topology, traffic dynamics, and production service-level objectives.
 
-- Uses the real `sklearn` digits dataset
-- Measures model accuracy
-- Measures local inference latency
-- Generates a confusion matrix
-
-### ⚙️ Deployment Decision Engine
-
-- Multi-objective scoring system
-- Constraint-based filtering:
-  - latency limits
-  - accuracy thresholds
-  - cost ceilings
-- Recommends the best deployment configuration
-
-### 📊 Interactive Dashboard
-
-- Built with Streamlit
-- Shows latency, energy, cost, carbon, and accuracy trade-offs
-- Allows interactive scenario exploration
-
-### 🔌 API-Ready System
-
-- FastAPI backend
-- Recommendation endpoint: `/recommend`
-- Local Swagger UI available at `/docs`
-
-### ⚡ Optimization Strategies
-
-- Quantization
-- Pruning
-- Batching
-- Caching
-- ONNX Runtime scenario
-- Combined optimization strategies
+This project demonstrates a practical production-style deployment optimization engine capable of evaluating and ranking deployment candidates under realistic infrastructure constraints.
 
 ---
 
-## ⚙️ How It Works
+## Core Features
+
+### Multi-Objective Optimization
+
+- Pareto frontier analysis
+- Latency vs. cost vs. carbon optimization
+- Dominance filtering
+- Trade-off ranking
+- Objective-aware deployment selection
+
+### Carbon-Aware AI Deployment
+
+- Region-based carbon intensity modeling
+- PUE-aware infrastructure energy estimation
+- Monthly energy and carbon tracking
+- Carbon-first deployment objective
+- Carbon-aware deployment comparison
+
+### Queueing & Autoscaling Simulation
+
+- Queue delay estimation
+- Traffic pattern analysis
+- Utilization-aware scaling
+- Required instance estimation
+- Latency SLO verification
+- Burst and spiky workload support
+
+### Deployment Explainability
+
+- Recommendation traceability
+- Constraint filtering visualization
+- Rejected candidate analysis
+- Executive recommendation insights
+- Score decomposition
+- Transparent deployment reasoning
+
+### Production-Oriented Deployment Logic
+
+- Real-time vs. batch serving
+- Edge vs. cloud vs. hybrid deployment
+- Workload-aware optimization
+- Traffic-aware scheduling
+- Infrastructure-aware evaluation
+
+### Benchmarking & Performance Modeling
+
+- Real benchmark support
+- ONNX Runtime benchmarking
+- Measured vs. simulated execution modes
+- Latency and accuracy profiling
+- Benchmark result integration
+
+### API & Deployment Ready
+
+- FastAPI integration
+- Docker deployment
+- Render deployment configuration
+- Procfile support
+- Modular architecture
+
+---
+
+## System Architecture
+
+![System Architecture](assets/system_architecture.png)
+
+The platform is structured as a layered deployment optimization system.
+
+| Layer | Responsibility |
+|---|---|
+| User Interface | Streamlit dashboard, presets, controls, visualizations |
+| Systems Layer | Traffic patterns, serving type, deployment type, region, SLOs |
+| Evaluation Engine | Model, hardware, region, performance, and cost evaluation |
+| Queueing Layer | Queue delay estimation, autoscaling, required instances, utilization |
+| Carbon Layer | Energy estimation, carbon emissions, PUE, region carbon intensity |
+| Pareto Optimizer | Multi-objective Pareto frontier analysis |
+| Recommendation Engine | Final deployment ranking, trade-off reasoning, constraint validation |
+
+---
+
+## Pareto Optimization Pipeline
+
+![Pareto Pipeline](assets/Pareto%20Optimization%20Pipeline.png)
+
+The optimization pipeline evaluates all deployment candidates and progressively filters them based on deployment constraints.
+
+### Pipeline Steps
+
+1. Candidate generation
+2. Constraint filtering
+3. Pareto frontier analysis
+4. Multi-objective ranking
+5. Final recommendation
+
+This makes the system suitable for exploring deployment trade-offs across competing objectives.
+
+---
+
+## Queueing & Autoscaling Logic
+
+![Queueing Logic](assets/Queueing%20%20Autoscaling%20Logic.png)
+
+The system simulates production traffic behavior using queueing and autoscaling logic.
+
+### Queueing and Scaling Capabilities
+
+- Incoming request modeling
+- Traffic pattern detection
+- Queue delay estimation
+- Autoscaling simulation
+- Required instance calculation
+- Utilization tracking
+- SLO violation detection
+
+---
+
+## Recommendation Trace & Explainability
+
+![Recommendation Explainability](assets/Recommendation%20Trace%20%20Explainability.png)
+
+The explainability layer provides transparent deployment reasoning.
+
+### Explainability Includes
+
+- Constraint validation
+- Rejected candidate inspection
+- Trade-off analysis
+- Pareto-efficient solution tracking
+- Executive deployment recommendations
+
+---
+
+## Live Recommendation Trace
+
+![Recommendation Trace](assets/Recommendation%20Trace%20Table.png)
+
+The recommendation trace visualizes how deployment candidates are progressively filtered across latency constraints, accuracy constraints, cost limits, SLO requirements, and production feasibility checks.
+
+This creates transparent and auditable deployment reasoning.
+
+---
+
+## Pareto Frontier Analysis
+
+### Latency vs. Cost Trade-Off
+
+![Pareto Cost](assets/Pareto%20Frontier%20Analysis.png)
+
+### Latency vs. Carbon Trade-Off
+
+![Pareto Carbon](assets/Pareto%20Frontier%20Analysis_carbon.png)
+
+The Pareto visualizations identify non-dominated deployment candidates across latency, monthly infrastructure cost, carbon emissions, and energy consumption. Bubble sizes represent deployment resource impact.
+
+---
+
+## Candidate Filtering Path
+
+![Filtering Path](assets/Recommendation%20Trace_Candidate%20Filtering%20Path.png)
+
+This visualization demonstrates how deployment candidates are reduced through successive production constraints.
+
+---
+
+## Dashboard Capabilities
+
+The dashboard supports:
+
+- preset-based deployment scenarios
+- real benchmark execution mode
+- simulated execution mode
+- carbon-aware optimization
+- Pareto frontier analysis
+- score transparency
+- trade-off exploration
+- recommendation explainability
+- ONNX benchmarking
+- API deployment preview
+- system-level infrastructure analysis
+
+---
+
+## Repository Structure
 
 ```text
-Real Benchmark
-      ↓
-Scenario Modeling
-      ↓
-Optimization Strategies
-      ↓
-Constraint Filtering
-      ↓
-Multi-objective Ranking
-      ↓
-Deployment Recommendation
+ai-deployment-decision-engine-top1/
+│
+├── api/                          # FastAPI deployment API
+├── app/                          # Streamlit dashboard
+├── configs/                      # Configuration files
+├── data/                         # Hardware/model/region datasets
+├── deployment/                   # Deployment configs and optional infrastructure scaffolds
+├── docs/                         # Technical documentation
+├── models/                       # ONNX and benchmark models
+├── notebooks/                    # Research notebooks
+├── outputs/                      # Generated figures and reports
+├── src/                          # Core optimization engine
+├── tests/                        # Unit tests
+│
+├── Dockerfile
+├── docker-compose.yml
+├── Procfile
+├── render.yaml
+├── requirements.txt
+├── requirements-optional.txt
+└── README.md
 ```
 
 ---
 
-## 📊 Results Preview
+## Installation
 
-### Latency vs Energy
+### Clone Repository
 
-![Latency vs Energy](outputs/figures/latency_energy_tradeoff.png)
+```bash
+git clone https://github.com/your-username/ai-deployment-decision-engine.git
+cd ai-deployment-decision-engine
+```
 
-### Accuracy vs Energy
+### Create Virtual Environment
 
-![Accuracy vs Energy](outputs/figures/accuracy_energy_tradeoff.png)
-
-### Energy Comparison
-
-![Energy Comparison](outputs/figures/energy_comparison.png)
-
-### Cost Comparison
-
-![Cost Comparison](outputs/figures/cost_comparison.png)
-
-### Confusion Matrix
-
-![Confusion Matrix](outputs/figures/digits_confusion_matrix.png)
-
----
-
-## 🚀 Quick Start
-
-### 1. Create and activate virtual environment
+Windows:
 
 ```bash
 python -m venv .venv
 .venv\Scripts\activate
 ```
 
-### 2. Install dependencies
+Linux/macOS:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Run the real benchmark
+Optional advanced modules:
 
 ```bash
-python src/accuracy_benchmark.py
+pip install -r requirements-optional.txt
 ```
 
-### 4. Run the pipeline
+---
 
-```bash
-python src/run_pipeline.py
-```
-
-### 5. Launch the Streamlit dashboard
+## Running the Dashboard
 
 ```bash
 streamlit run app/app.py
 ```
 
+Dashboard will open at:
+
+```text
+http://localhost:8501
+```
+
 ---
 
-## 🔌 API Usage
-
-Run the FastAPI backend locally:
+## Running the API
 
 ```bash
 uvicorn api.main:app --reload
 ```
 
-Then open Swagger UI in your browser:
+API endpoint:
+
+```text
+http://127.0.0.1:8000
+```
+
+FastAPI documentation:
 
 ```text
 http://127.0.0.1:8000/docs
 ```
 
-> Note: `127.0.0.1` is a local address. It only works while the API is running on your own computer. For a public link, the API must be deployed, for example on Render.
-
-### Endpoint
-
-```text
-POST /recommend
-```
-
-Returns:
-
-- recommended hardware
-- optimization strategy
-- reasoning
-- latency estimate
-- accuracy estimate
-- cost estimate
-- energy and carbon estimates
-
 ---
 
-## ⚡ Optional Advanced Benchmarks
-
-### PyTorch benchmark
+## Running Tests
 
 ```bash
-pip install torch torchvision
-python src/real_benchmark.py
+pytest
 ```
 
-### ONNX export and benchmark
+Run optional advanced module tests:
 
 ```bash
-pip install torch torchvision onnx onnxruntime
-python src/onnx_export.py
-python src/onnx_benchmark.py
+pytest tests/test_optional_advanced.py
 ```
 
 ---
 
-## 📁 Project Structure
+## Docker Deployment
+
+### Build Container
+
+```bash
+docker build -t ai-deployment-engine .
+```
+
+### Run Container
+
+```bash
+docker run -p 8501:8501 ai-deployment-engine
+```
+
+---
+
+## Render Deployment
+
+This repository includes:
+
+- `render.yaml`
+- `Procfile`
+- Docker support
+
+The project is compatible with deployment platforms such as Render, Railway, Hugging Face Spaces, and Streamlit Community Cloud.
+
+---
+
+## Technical Stack
+
+| Component | Technology |
+|---|---|
+| Frontend | Streamlit |
+| Backend API | FastAPI |
+| Visualization | Plotly |
+| Data Processing | Pandas / NumPy |
+| Optimization | Pareto Multi-Objective Logic |
+| Benchmarking | ONNX Runtime |
+| Deployment | Docker |
+| Testing | PyTest |
+
+---
+
+## Benchmarking & Data Sources
+
+The engine uses hardware performance profiles, model accuracy profiles, regional carbon intensity profiles, optimization strategy datasets, ONNX benchmark outputs, queueing simulations, and autoscaling estimations.
+
+The system supports both:
+
+- **Measured mode**: uses benchmark-driven latency and accuracy results.
+- **Simulated mode**: uses scenario-based assumptions for infrastructure exploration.
+
+---
+
+## Example Deployment Objectives
+
+| Objective | Prioritizes |
+|---|---|
+| Balanced | Overall trade-off quality |
+| Latency-first | Lowest inference delay |
+| Cost-first | Lowest monthly infrastructure cost |
+| Carbon-first | Lowest emissions |
+| Accuracy-first | Highest prediction quality |
+
+---
+
+## Optional Advanced Modules
+
+This project also includes optional advanced systems modules:
+
+- Kubernetes deployment simulation
+- GPU memory-aware scheduling
+- live carbon signal adapter
+- electricity price adapter
+- RL-style objective optimizer
+- Triton Inference Server scaffold
+- Prometheus/Grafana telemetry stack
+
+These modules are intentionally optional so the main dashboard remains stable while still showing extensibility toward production AI infrastructure.
+
+See:
 
 ```text
-.
-├── app/                 # Streamlit dashboard
-├── api/                 # FastAPI service
-├── src/                 # Core decision engine and benchmark scripts
-├── data/                # Model, hardware, optimization, and region profiles
-├── outputs/             # Generated reports and figures
-├── docs/                # Methodology, assumptions, references
-├── models/              # Saved models
-├── tests/               # Unit tests
-├── requirements.txt
-└── README.md
+docs/optional_advanced_upgrades.md
+docs/gpu_memory_scheduling.md
+docs/rl_optimizer.md
+docs/triton_inference_server.md
+docs/prometheus_grafana.md
+deployment/kubernetes/
+deployment/triton/
+deployment/monitoring/
 ```
 
 ---
 
-## 📊 Key Outputs
+## Future Improvements
 
-- Deployment recommendation JSON
-- Latency vs energy trade-off plot
-- Accuracy vs energy analysis
-- Cost comparison plot
-- Real dataset confusion matrix
-- Energy and carbon estimates
-- API-based recommendation response
+Potential future upgrades include:
 
----
-
-## 🌍 Methodology Note
-
-This project uses a **hybrid methodology**:
-
-1. **Real ML benchmarking**
-   - real dataset
-   - measured accuracy
-   - measured local latency
-
-2. **Scenario-based infrastructure modeling**
-   - energy consumption
-   - carbon impact
-   - cost estimates
-   - hardware and optimization profiles
-
-It is designed to demonstrate an **AI deployment decision framework**, not exact production telemetry.
+- live GPU telemetry integration
+- Kubernetes deployment orchestration
+- dynamic cloud pricing APIs
+- real-time electricity carbon APIs
+- reinforcement-learning-based optimization
+- multi-region inference orchestration
+- GPU memory-aware scheduling
+- LLM serving optimization
+- cloud-native autoscaling policies
+- Triton Inference Server production integration
+- Prometheus/Grafana telemetry dashboards
 
 ---
 
-## 🔬 References
+## Research & Engineering Focus
 
-- NVIDIA GPU specifications
-- Uptime Institute data center PUE references
-- Ember electricity carbon intensity references
-- US EPA eGRID
-- Scikit-learn digits dataset
-
-See: [`docs/references.md`](docs/references.md)
+This project combines concepts from AI systems engineering, inference optimization, sustainable AI infrastructure, queueing theory, carbon-aware computing, multi-objective optimization, infrastructure modeling, and production AI deployment systems.
 
 ---
 
-## 🎥 Demo Video
+## Disclaimer
 
-Coming soon.
+This project is intended for research, portfolio demonstration, infrastructure prototyping, and deployment optimization exploration.
 
----
-
-## 👨‍💻 Author
-
-**Ashiqur Rahman Rahul**  
-AI Research Analyst  
-AI Systems | Energy Efficiency | Infrastructure Optimization  
-Berlin, Germany
+Infrastructure metrics and assumptions are configurable and should be adapted to real production telemetry before operational use.
 
 ---
 
-## 📜 License
+## License
 
 MIT License
+
+---
+
+## Author
+
+**Ashiqur Rahman Rahul**
+
+Research-focused AI systems engineering, deployment optimization, and energy-aware AI infrastructure analysis.

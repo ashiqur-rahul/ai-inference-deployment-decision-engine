@@ -1,0 +1,50 @@
+{
+  "status": "completed",
+  "model": "MobileNetV2",
+  "runtime": "ONNX Runtime CPUExecutionProvider",
+  "benchmark_rows": [
+    {
+      "runtime": "ONNX Runtime CPU",
+      "model": "MobileNetV2",
+      "batch_size": 1,
+      "iterations": 50,
+      "mean_latency_ms": 1.2204059999567107,
+      "median_latency_ms": 1.2009499996565864,
+      "p95_latency_ms": 1.3744000007136492,
+      "throughput_images_per_second": 819.39944578728
+    },
+    {
+      "runtime": "ONNX Runtime CPU",
+      "model": "MobileNetV2",
+      "batch_size": 4,
+      "iterations": 50,
+      "mean_latency_ms": 3.5578999999961525,
+      "median_latency_ms": 3.53240000004007,
+      "p95_latency_ms": 3.914999999324209,
+      "throughput_images_per_second": 1124.2586919262276
+    },
+    {
+      "runtime": "ONNX Runtime CPU",
+      "model": "MobileNetV2",
+      "batch_size": 8,
+      "iterations": 50,
+      "mean_latency_ms": 6.18650999995225,
+      "median_latency_ms": 6.163049999940995,
+      "p95_latency_ms": 6.463300000177696,
+      "throughput_images_per_second": 1293.1361947304292
+    }
+  ],
+  "best_throughput_configuration": {
+    "runtime": "ONNX Runtime CPU",
+    "model": "MobileNetV2",
+    "batch_size": 8,
+    "iterations": 50,
+    "mean_latency_ms": 6.18650999995225,
+    "median_latency_ms": 6.163049999940995,
+    "p95_latency_ms": 6.463300000177696,
+    "throughput_images_per_second": 1293.1361947304292
+  },
+  "csv_path": "C:\\Users\\rahul\\Git1_test\\ai-deployment-decision-engine-top1\\ai-deployment-decision-engine-top1\\outputs\\reports\\onnx_benchmark_results.csv",
+  "figure_path": "C:\\Users\\rahul\\Git1_test\\ai-deployment-decision-engine-top1\\ai-deployment-decision-engine-top1\\outputs\\figures\\onnx_latency_by_batch.png",
+  "note": "This benchmark measures local ONNX Runtime latency. Accuracy is not evaluated here because the exported model uses random weights."
+}

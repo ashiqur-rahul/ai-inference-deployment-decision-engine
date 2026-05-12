@@ -1,0 +1,21 @@
+{
+  "status": "completed",
+  "csv_path": "C:\\Users\\rahul\\Git1_test\\ai-deployment-decision-engine-top1\\ai-deployment-decision-engine-top1\\outputs\\reports\\benchmark_comparison.csv",
+  "figure_path": "C:\\Users\\rahul\\Git1_test\\ai-deployment-decision-engine-top1\\ai-deployment-decision-engine-top1\\outputs\\figures\\benchmark_latency_comparison.png",
+  "benchmarks": [
+    {
+      "benchmark": "sklearn digits",
+      "runtime": "LogisticRegression",
+      "mean_latency_ms": 0.09307450091000646,
+      "accuracy": 0.9777777777777777,
+      "notes": "Real accuracy + latency on sklearn digits"
+    },
+    {
+      "benchmark": "ONNX Runtime MobileNetV2",
+      "runtime": "CPUExecutionProvider",
+      "mean_latency_ms": 6.18650999995225,
+      "accuracy": null,
+      "notes": "Best throughput at batch size 8"
+    }
+  ]
+}

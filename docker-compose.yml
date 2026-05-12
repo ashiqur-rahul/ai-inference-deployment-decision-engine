@@ -1,0 +1,14 @@
+services:
+  dashboard:
+    build: .
+    container_name: ai-deployment-dashboard
+    ports:
+      - "8501:8501"
+    command: streamlit run app/app.py --server.address=0.0.0.0 --server.port=8501
+
+  api:
+    build: .
+    container_name: ai-deployment-api
+    ports:
+      - "8000:8000"
+    command: uvicorn api.main:app --host 0.0.0.0 --port 8000

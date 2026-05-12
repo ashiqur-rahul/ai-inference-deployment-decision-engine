@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-deployment-dashboard
+  labels:
+    app: ai-deployment-dashboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ai-deployment-dashboard
+  template:
+    metadata:
+      labels:
+        app: ai-deployment-dashboard
+    spec:
+      containers:
+        - name: dashboard
+          image: ai-deployment-decision-engine:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8501
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "512Mi"
+            limits:
+              cpu: "1"
+              memory: "2Gi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ai-deployment-dashboard-service
+spec:
+  type: ClusterIP
+  selector:
+    app: ai-deployment-dashboard
+  ports:
+    - port: 8501
+      targetPort: 8501

@@ -1,18 +1,14 @@
-import sys
-from pathlib import Path
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.append(str(ROOT / "src"))
-from data_loader import load_data
-from engine import evaluate_all, recommend
-def test_recommendation_exists():
-    data = load_data()
-    results = evaluate_all(data)
-    rec = recommend(results)
-    assert "hardware" in rec
-    assert "strategy" in rec
-    assert len(results) > 0
-def test_results_have_expected_columns():
-    data = load_data()
-    results = evaluate_all(data)
-    expected = {"latency_ms", "estimated_accuracy", "facility_energy_kwh", "monthly_cost_usd", "score"}
-    assert expected.issubset(set(results.columns))
+from src.engine import objective_weights, traffic_multiplier, scheduling_class
+
+
+def test_objective_weights_has_carbon():
+    weights = objective_weights("Carbon")
+    assert weights["carbon"] > weights["cost"]
+
+
+def test_traffic_multiplier_spiky_greater_than_steady():
+    assert traffic_multiplier("Spiky") > traffic_multiplier("Steady")
+
+
+def test_scheduling_class_edge():
+    assert scheduling_class("Jetson AGX Xavier") == "Edge"

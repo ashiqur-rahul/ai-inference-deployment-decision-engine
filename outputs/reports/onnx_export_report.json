@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "model": "MobileNetV2",
+  "onnx_path": "C:\\Users\\rahul\\Git1_test\\ai-deployment-decision-engine-top1\\ai-deployment-decision-engine-top1\\models\\mobilenet_v2.onnx",
+  "input_shape": [
+    1,
+    3,
+    224,
+    224
+  ],
+  "opset_version": 12,
+  "dynamic_batching": true,
+  "note": "ONNX export completed. The model uses random weights and is intended for deployment benchmarking."
+}
